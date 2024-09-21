@@ -9,7 +9,7 @@ class ComplexTransform:
     def getTransformedImage(self, image):
         for transform in self.transforms:
             image = transform(image)
-        return getRecoverImage((image * 255).astype(np.uint8))
+        return image
     __call__ = getTransformedImage
 
 def argToFunc(arg):
